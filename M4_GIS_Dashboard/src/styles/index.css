@@ -1,0 +1,35 @@
+@import './tokens.css';
+@import 'maplibre-gl/dist/maplibre-gl.css';
+
+/* Utility classes for Map Viewer Design System */
+.bg-surface-page { background-color: var(--color-surface-page); }
+.bg-surface-base { background-color: var(--color-surface-base); }
+.bg-surface-raised { background-color: var(--color-surface-raised); }
+.bg-surface-muted { background-color: var(--color-surface-muted); }
+
+.text-primary { color: var(--color-text-primary); }
+.text-secondary { color: var(--color-text-secondary); }
+.text-muted { color: var(--color-text-muted); }
+.text-accent { color: var(--color-text-accent); }
+
+.border-default { border-color: var(--color-border-default); }
+.border-strong { border-color: var(--color-border-strong); }
+
+/* Custom scrollbar for data tables and panels */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-surface-raised);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-border-strong);
+  border-radius: var(--radius-xs);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-text-muted);
+}

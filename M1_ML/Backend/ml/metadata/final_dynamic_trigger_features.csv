@@ -1,0 +1,16 @@
+feature
+rainfall_1d
+rainfall_3d
+rainfall_7d
+rainfall_14d
+rainfall_30d
+rainfall_max_3d
+rainfall_max_7d
+rainy_days_7d
+rainy_days_14d
+rainy_days_30d
+soil_moisture
+soil_moisture_3d_mean
+soil_moisture_7d_mean
+soil_moisture_change_3d
+soil_moisture_change_7d

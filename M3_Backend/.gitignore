@@ -1,0 +1,56 @@
+# =============================================================================
+# .gitignore — SIH 2026 Backend
+# =============================================================================
+
+# --- Environment secrets (CRITICAL — never commit these) ---
+.env
+*.env.local
+
+# --- Python virtual environment ---
+venv/
+env/
+.venv/
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+dist/
+build/
+*.egg
+
+# --- IDE & Editor ---
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+
+# --- Test / Coverage ---
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+
+# --- Alembic generated (keep migrations folder, not cache) ---
+migrations/__pycache__/
+
+# --- Logs ---
+*.log
+logs/
+
+# --- Docker volumes ---
+postgres_data/
+
+# --- ML model artifacts (large files — use Git LFS or external storage) ---
+*.pkl
+*.joblib
+*.h5
+*.pt
+*.onnx
+
+
+# --- Uploaded files (if any local test uploads) ---
+uploads/
+media/

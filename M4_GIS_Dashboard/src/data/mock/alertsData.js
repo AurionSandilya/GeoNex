@@ -1,0 +1,135 @@
+/**
+ * Alerts & Early Warning Priority Queue Mock Data
+ * Aligned with FastAPI AlertResponse schema and operational GIS coordinates for Arunachal Pradesh.
+ */
+
+export const MOCK_ALERTS = [
+  {
+    id: "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+    priority: "P1",
+    severity: "CRITICAL",
+    status: "ACTIVE",
+    title: "Sela Pass High Altitude Debris Flow Hazard",
+    message: "Extreme slope displacement & heavy snow-rain melt near Sela Tunnel portal (NH-229). High risk of highway blockage.",
+    location_name: "Sela Pass, Tawang",
+    district: "Tawang",
+    state: "Arunachal Pradesh",
+    coordinates: [92.10, 27.50],
+    risk_score: 0.96,
+    confidence: 0.94,
+    rainfall_24h: 178.0,
+    soil_saturation: 92.0,
+    created_at: new Date(Date.now() - 3 * 60 * 1000).toISOString(),
+    acknowledged_at: null,
+    affected_infrastructure: ["NH-229 Tawang Highway", "Sela Tunnel Approach Road", "Army Convoy Staging Area"],
+    recommended_action: "Halt heavy vehicular traffic and deploy BRO snow & rock clearing machinery."
+  },
+  {
+    id: "4ba95f64-5717-4562-b3fc-2c963f66afa7",
+    priority: "P1",
+    severity: "CRITICAL",
+    status: "ACTIVE",
+    title: "Trans-Arunachal Highway NH-229 Corridor Washout",
+    message: "Major slope collapse detected on NH-229 near Sagalee Pass. Immediate road closure recommended.",
+    location_name: "Sagalee Pass, Papum Pare",
+    district: "Papum Pare",
+    state: "Arunachal Pradesh",
+    coordinates: [93.42, 27.24],
+    risk_score: 0.94,
+    confidence: 0.92,
+    rainfall_24h: 162.0,
+    soil_saturation: 89.1,
+    created_at: new Date(Date.now() - 8 * 60 * 1000).toISOString(),
+    acknowledged_at: null,
+    affected_infrastructure: ["NH-229 Corridor", "Sagalee Sub-Division Hospital", "Toru Access Road"],
+    recommended_action: "Halt heavy vehicles and issue emergency traffic detour via Doimukh."
+  },
+  {
+    id: "5ca95f64-5717-4562-b3fc-2c963f66afa8",
+    priority: "P2",
+    severity: "HIGH",
+    status: "ACTIVE",
+    title: "Anini - Etalin NH-313 Mountain Escarpment Failure",
+    message: "Rapid rockfall & mudslide active along NH-313 Dibang Valley corridor. Severe isolation risk for Anini town.",
+    location_name: "Etalin Gorge, Dibang Valley",
+    district: "Dibang Valley",
+    state: "Arunachal Pradesh",
+    coordinates: [95.88, 28.62],
+    risk_score: 0.89,
+    confidence: 0.90,
+    rainfall_24h: 185.0,
+    soil_saturation: 94.0,
+    created_at: new Date(Date.now() - 15 * 60 * 1000).toISOString(),
+    acknowledged_at: null,
+    affected_infrastructure: ["NH-313 Highway", "Etalin Hydro Power Camp"],
+    recommended_action: "Dispatch PWD heavy excavators and alert District Disaster Management Officer Anini."
+  },
+  {
+    id: "6da95f64-5717-4562-b3fc-2c963f66afa9",
+    priority: "P2",
+    severity: "HIGH",
+    status: "ACTIVE",
+    title: "Yachuli Slope Instability & Tension Crack",
+    message: "Tension crack expanding above Itanagar-Ziro highway cut. Moderate probability of slip within 12 hours.",
+    location_name: "Yachuli Pass, Lower Subansiri",
+    district: "Lower Subansiri",
+    state: "Arunachal Pradesh",
+    coordinates: [93.76, 27.45],
+    risk_score: 0.83,
+    confidence: 0.88,
+    rainfall_24h: 135.0,
+    soil_saturation: 84.0,
+    created_at: new Date(Date.now() - 25 * 60 * 1000).toISOString(),
+    acknowledged_at: null,
+    affected_infrastructure: ["Ziro Highway Corridor", "Yachuli Market Access"],
+    recommended_action: "Station emergency response team and erect hazard warning signage."
+  },
+  {
+    id: "7ea95f64-5717-4562-b3fc-2c963f66afb0",
+    priority: "P3",
+    severity: "MODERATE",
+    status: "ACTIVE",
+    title: "NH-415 Karsingsa S-Bend Creep Watch",
+    message: "Slope creep observed along NH-415 near Banderdewa checkpost after continuous rainfall.",
+    location_name: "Karsingsa S-Bend, Naharlagun",
+    district: "Papum Pare",
+    state: "Arunachal Pradesh",
+    coordinates: [93.72, 27.12],
+    risk_score: 0.68,
+    confidence: 0.86,
+    rainfall_24h: 112.0,
+    soil_saturation: 78.5,
+    created_at: new Date(Date.now() - 40 * 60 * 1000).toISOString(),
+    acknowledged_at: null,
+    affected_infrastructure: ["NH-415 Road", "Power Transmission Line"],
+    recommended_action: "Continuous hydromet monitoring & drainage check."
+  },
+  {
+    id: "8fa95f64-5717-4562-b3fc-2c963f66afb1",
+    priority: "P4",
+    severity: "LOW",
+    status: "ACTIVE",
+    title: "Pasighat Hill Slope Drainage Advisory",
+    message: "Minor soil washing detected on hillside drain near Pasighat Smart City bypass.",
+    location_name: "Pasighat Hill Sector, East Siang",
+    district: "East Siang",
+    state: "Arunachal Pradesh",
+    coordinates: [95.33, 28.06],
+    risk_score: 0.42,
+    confidence: 0.91,
+    rainfall_24h: 65.0,
+    soil_saturation: 58.0,
+    created_at: new Date(Date.now() - 60 * 60 * 1000).toISOString(),
+    acknowledged_at: null,
+    affected_infrastructure: ["Pasighat Municipal Bypass"],
+    recommended_action: "Routine monitoring."
+  }
+];
+
+export const INITIAL_ALERTS = MOCK_ALERTS;
+export const ALERT_HISTORY = [
+  { id: "ALT-HIST-2026-008", severity: "CRITICAL", title: "Sela Pass Rockfall Blockade", date: "2026-08-28", status: "RESOLVED", resolution: "BRO cleared 450 tonnes debris, opened traffic." },
+  { id: "ALT-HIST-2026-007", severity: "HIGH", title: "Sagalee Highway Slope Washout", date: "2026-08-14", status: "RESOLVED", resolution: "Debris cleared, slope reinforced with wire mesh." },
+  { id: "ALT-HIST-2026-006", severity: "HIGH", title: "Karsingsa Heavy Rain Advisory", date: "2026-08-02", status: "EXPIRED", resolution: "Rainfall intensity dropped below threshold." }
+];
+

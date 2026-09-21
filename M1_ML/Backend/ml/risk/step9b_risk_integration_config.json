@@ -1,0 +1,51 @@
+{
+  "static_model": "final_landslide_random_forest_pipeline.pkl",
+  "dynamic_model": "final_dynamic_trigger_random_forest_pipeline.pkl",
+  "static_classes": {
+    "1": "LOW",
+    "2": "MODERATE",
+    "3": "HIGH",
+    "4": "VERY_HIGH"
+  },
+  "dynamic_classes": {
+    "1": "LOW",
+    "2": "MODERATE",
+    "3": "HIGH",
+    "4": "VERY_HIGH"
+  },
+  "dynamic_thresholds": {
+    "low_below": 0.13,
+    "moderate_below": 0.3,
+    "high_below": 0.5,
+    "very_high_from": 0.5
+  },
+  "threshold_status": "PROVISIONAL",
+  "integration_method": "ordinal_risk_matrix",
+  "risk_matrix": {
+    "1": [
+      "LOW",
+      "LOW",
+      "MODERATE",
+      "HIGH"
+    ],
+    "2": [
+      "LOW",
+      "MODERATE",
+      "HIGH",
+      "HIGH"
+    ],
+    "3": [
+      "MODERATE",
+      "HIGH",
+      "HIGH",
+      "VERY HIGH"
+    ],
+    "4": [
+      "HIGH",
+      "HIGH",
+      "VERY HIGH",
+      "VERY HIGH"
+    ]
+  },
+  "warning": "Integration thresholds and risk matrix require final validation; they are not calibrated probabilities."
+}

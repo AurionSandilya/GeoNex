@@ -1,0 +1,43 @@
+{
+    "model_type": "RandomForestClassifier",
+    "model_role": "static_landslide_susceptibility",
+    "training_samples": 2266,
+    "positive_samples": 206,
+    "negative_samples": 2060,
+    "features": [
+        "elevation",
+        "slope",
+        "curvature",
+        "soil_type",
+        "ndvi_2017",
+        "distance_to_river_m",
+        "distance_to_road_m",
+        "distance_to_village_m",
+        "aspect_sin",
+        "aspect_cos"
+    ],
+    "numeric_features": [
+        "elevation",
+        "slope",
+        "curvature",
+        "ndvi_2017",
+        "distance_to_river_m",
+        "distance_to_road_m",
+        "distance_to_village_m",
+        "aspect_sin",
+        "aspect_cos"
+    ],
+    "categorical_features": [
+        "soil_type"
+    ],
+    "n_estimators": 500,
+    "class_weight": "balanced",
+    "min_samples_leaf": 2,
+    "max_features": "sqrt",
+    "random_state": 42,
+    "development_threshold": 0.29,
+    "threshold_selection_method": "5-fold OOF F2",
+    "oof_roc_auc": 0.9698,
+    "oof_pr_auc": 0.8356,
+    "warning": "Threshold 0.29 is a development threshold. It was not selected using the independent geographic test sets."
+}
