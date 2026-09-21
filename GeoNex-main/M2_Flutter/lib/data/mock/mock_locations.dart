@@ -1,0 +1,152 @@
+import '../../core/models/risk_data.dart';
+
+class MockLocationsData {
+  static List<RiskLocation> getInitialLocations() {
+    return [
+      const RiskLocation(
+        id: 'loc_papum_pare',
+        name: 'Papum Pare',
+        district: 'Papum Pare',
+        state: 'Arunachal Pradesh',
+        latitude: 27.1500,
+        longitude: 93.7000,
+        susceptibility: SusceptibilityFactors(
+          slopeAngleDegrees: 34.5,
+          elevationMeters: 1250,
+          lithology: 'Weathered Sandstone & Shale',
+          landCover: 'Steep Escarpment & Road Cut',
+          historicalLandslidesCount: 7,
+          drainageDensity: 3.8,
+        ),
+        dynamicConditions: DynamicConditions(
+          rainfallMm: 142.0, // Heavy monsoon rainfall
+          rainfallForecastMm: 165.0,
+          soilMoistureIndex: 0.88, // Near saturation
+          seismicActivityMag: 3.6,
+          verifiedFieldReportsCount: 2,
+          slopeDisplacementRate: 8.5, // mm/day
+        ),
+      ),
+      const RiskLocation(
+        id: 'loc_tawang',
+        name: 'Tawang Pass Corridor',
+        district: 'Tawang',
+        state: 'Arunachal Pradesh',
+        latitude: 27.5861,
+        longitude: 91.8653,
+        susceptibility: SusceptibilityFactors(
+          slopeAngleDegrees: 41.2,
+          elevationMeters: 3048,
+          lithology: 'Gneissic Bedrock & Moraine',
+          landCover: 'Alpine Scrub & Scree Slopes',
+          historicalLandslidesCount: 5,
+          drainageDensity: 4.2,
+        ),
+        dynamicConditions: DynamicConditions(
+          rainfallMm: 118.0,
+          rainfallForecastMm: 130.0,
+          soilMoistureIndex: 0.82,
+          seismicActivityMag: 2.8,
+          verifiedFieldReportsCount: 1,
+          slopeDisplacementRate: 6.2,
+        ),
+      ),
+      const RiskLocation(
+        id: 'loc_dima_hasao',
+        name: 'Dima Hasao Hill Tract',
+        district: 'Dima Hasao',
+        state: 'Assam',
+        latitude: 25.1764,
+        longitude: 93.0238,
+        susceptibility: SusceptibilityFactors(
+          slopeAngleDegrees: 29.8,
+          elevationMeters: 780,
+          lithology: 'Disang Group Clay-Shale',
+          landCover: 'Shifting Cultivation & Railway Cut',
+          historicalLandslidesCount: 6,
+          drainageDensity: 3.5,
+        ),
+        dynamicConditions: DynamicConditions(
+          rainfallMm: 98.0,
+          rainfallForecastMm: 110.0,
+          soilMoistureIndex: 0.79,
+          seismicActivityMag: 1.5,
+          verifiedFieldReportsCount: 1,
+          slopeDisplacementRate: 5.1,
+        ),
+      ),
+      const RiskLocation(
+        id: 'loc_east_khasi',
+        name: 'Mawkdok Valley Corridor',
+        district: 'East Khasi Hills',
+        state: 'Meghalaya',
+        latitude: 25.3500,
+        longitude: 91.7500,
+        susceptibility: SusceptibilityFactors(
+          slopeAngleDegrees: 36.0,
+          elevationMeters: 1400,
+          lithology: 'Khasi Group Quartzite & Sandstone',
+          landCover: 'High Canyon Slope & Gorge',
+          historicalLandslidesCount: 4,
+          drainageDensity: 4.5,
+        ),
+        dynamicConditions: DynamicConditions(
+          rainfallMm: 168.0,
+          rainfallForecastMm: 190.0,
+          soilMoistureIndex: 0.85,
+          seismicActivityMag: 2.2,
+          verifiedFieldReportsCount: 1,
+          slopeDisplacementRate: 4.8,
+        ),
+      ),
+      const RiskLocation(
+        id: 'loc_west_sikkim',
+        name: 'Geyzing-Pelling Ridge',
+        district: 'West Sikkim',
+        state: 'Sikkim',
+        latitude: 27.2885,
+        longitude: 88.2435,
+        susceptibility: SusceptibilityFactors(
+          slopeAngleDegrees: 32.5,
+          elevationMeters: 2150,
+          lithology: 'Phyllite & Schist Formation',
+          landCover: 'Terraced Agriculture & Road Slopes',
+          historicalLandslidesCount: 3,
+          drainageDensity: 3.1,
+        ),
+        dynamicConditions: DynamicConditions(
+          rainfallMm: 62.0,
+          rainfallForecastMm: 70.0,
+          soilMoistureIndex: 0.58,
+          seismicActivityMag: 1.8,
+          verifiedFieldReportsCount: 0,
+          slopeDisplacementRate: 2.1,
+        ),
+      ),
+      const RiskLocation(
+        id: 'loc_kohima',
+        name: 'Dzükou Highway Slopes',
+        district: 'Kohima',
+        state: 'Nagaland',
+        latitude: 25.6751,
+        longitude: 94.1086,
+        susceptibility: SusceptibilityFactors(
+          slopeAngleDegrees: 28.0,
+          elevationMeters: 1444,
+          lithology: 'Barail Sandstone',
+          landCover: 'Dense Subtropical Pine',
+          historicalLandslidesCount: 2,
+          drainageDensity: 2.7,
+        ),
+        dynamicConditions: DynamicConditions(
+          rainfallMm: 45.0,
+          rainfallForecastMm: 50.0,
+          soilMoistureIndex: 0.44,
+          seismicActivityMag: 1.2,
+          verifiedFieldReportsCount: 0,
+          slopeDisplacementRate: 1.2,
+        ),
+      ),
+    ];
+  }
+}

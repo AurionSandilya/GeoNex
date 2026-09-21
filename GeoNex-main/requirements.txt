@@ -1,0 +1,49 @@
+# =============================================================================
+# NER-LEWS — Unified Master Requirements
+# Smart India Hackathon 2026 (PS ID: 26001)
+# Consolidated Python Dependencies for M1 (ML), M3 (Backend), and M5 (Alerts)
+# =============================================================================
+# Install all dependencies at once in your virtual environment:
+#   pip install -r requirements.txt
+# =============================================================================
+
+# --- Core Web Framework & ASGI Server (M3 & M5) ---
+fastapi>=0.110.0
+uvicorn[standard]>=0.28.0
+
+# --- Data Validation & Settings (M3 & M5) ---
+pydantic>=2.6.0
+pydantic-settings>=2.2.0
+email-validator>=2.1.0
+
+# --- Database & Migrations (M3 & M5 shared PostgreSQL) ---
+sqlalchemy>=2.0.25
+asyncpg>=0.29.0
+alembic>=1.13.0
+
+# --- Geospatial & PostGIS (M3) ---
+geoalchemy2>=0.14.0
+shapely>=2.0.0
+
+# --- M1 Machine Learning Engine ---
+scikit-learn==1.6.1
+joblib>=1.3.0
+pandas>=2.1.0
+numpy>=1.26.0
+
+# --- Authentication, Security & Utilities (M3) ---
+python-jose[cryptography]>=3.3.0
+passlib[bcrypt]>=1.7.4
+python-multipart>=0.0.9
+python-dotenv>=1.0.0
+
+# --- Async HTTP Client & Inter-Service Webhooks (M3 & M5) ---
+httpx>=0.27.0
+
+# --- Background Scheduling & Dispatcher (M5) ---
+apscheduler>=3.10.0
+
+# --- Testing & Quality Assurance ---
+pytest>=8.0.0
+pytest-asyncio>=0.23.0
+aiosqlite>=0.20.0

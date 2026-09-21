@@ -1,0 +1,62 @@
+Step 2 — Data Cleaning
+Cleaning task	Code handles it?
+Missing values	✅ Detects/reports
+Duplicate records	✅ Removes duplicates
+Invalid coordinates	✅ Detects/removes
+Incorrect dates	✅ Converts/checks
+Different units	⚠️ Reports data; doesn't blindly convert unknown units
+Outliers	✅ Reports potential IQR outliers
+Invalid geometries	✅ Detects + attempts repair
+Raster nodata	✅ Checks
+Raster coverage	✅ Reports valid-pixel percentage
+Cloud contamination	⚠️ Not automatically from these TIFF
+
+Dataset	Finding	What we should do
+Rainfall	2,492 potential outliers	Keep for now — extreme rainfall can be genuine
+Soil moisture	1 missing value	Handle during preprocessing
+Landslide inventory	26 missing dates	Investigate before creating temporal labels
+Landslide inventory	49 missing material/mechanism/trigger	Keep unless those fields are required
+Earthquakes	3 depth outliers	Inspect; don't automatically remove
+Rivers	Code error	Fix code as above
+
+clean all Papum Pare GeoJSONs
+
+Step 2 — Data Cleaning for Both Districts
+Cell 1 — Setup
+Cell 2 — Check that the expected files actually exist
+Cell 3 — Clean CSV files
+Cell 4 — Clean GeoJSON files
+Cell 5 — Check all raster files
+Cell 6 — Check vector CRS for both districts
+
+/kaggle/working/cleaned_districts/
+│
+├── papum_pare/
+│   ├── papum_pare_daily_rainfall_clean.csv
+│   ├── papum_pare_daily_soil_moisture_clean.csv
+│   ├── master_landslide_inventory_papum_pare_clean.csv
+│   ├── earthquakes_papum_pare_region_clean.csv
+│   ├── papum_pare_boundary_clean.geojson
+│   ├── rivers_papum_pare_clean.geojson
+│   ├── roads_papum_pare_clean.geojson
+│   ├── villages_papum_pare_clean.geojson
+│   ├── master_landslide_inventory_papum_pare_clean.geojson
+│   └── earthquakes_papum_pare_region_clean.geojson
+│
+├── west_kameng/
+│   ├── west_kameng_daily_rainfall_clean.csv
+│   ├── west_kameng_daily_soil_moisture_clean.csv
+│   ├── master_landslide_inventory_west_kameng_clean.csv
+│   ├── earthquakes_west_kameng_region_clean.csv
+│   ├── west_kameng_boundary_clean.geojson
+│   ├── rivers_west_kameng_clean.geojson
+│   ├── roads_west_kameng_clean.geojson
+│   ├── villages_west_kameng_clean.geojson
+│   ├── master_landslide_inventory_west_kameng_clean.geojson
+│   └── earthquakes_west_kameng_region_clean.geojson
+│
+├── papum_pare_raster_quality_report.csv
+├── west_kameng_raster_quality_report.csv
+├── papum_pare_vector_crs_report.csv
+└── west_kameng_vector_crs_report.csv
+

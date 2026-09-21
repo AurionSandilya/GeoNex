@@ -1,0 +1,40 @@
+version: '3.8'
+
+services:
+  web:
+    build: .
+    container_name: sih_backend_web
+    restart: always
+    ports:
+      - "8000:8000"
+    environment:
+      - APP_NAME=SIH Landslide Backend
+      - ENVIRONMENT=production
+      - DEBUG=True
+      - SECRET_KEY=prod-super-secret-key-sih-2026
+      - DATABASE_URL=postgresql+asyncpg://postgres:sih2026postgis@db:5432/sih_landslide
+      - ALLOWED_ORIGINS=http://localhost:3000,http://localhost:5173
+    depends_on:
+      db:
+        condition: service_healthy
+
+  db:
+    image: postgis/postgis:16-3.4
+    container_name: sih_postgis_db
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: sih2026postgis
+      POSTGRES_DB: sih_landslide
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d sih_landslide"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  postgres_data:

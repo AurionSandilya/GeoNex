@@ -1,0 +1,86 @@
+import '../../core/constants/app_constants.dart';
+import '../../core/models/alert_model.dart';
+
+class MockAlertsData {
+  static List<AlertModel> getInitialAlerts() {
+    return [
+      AlertModel(
+        alertId: 'alt_001',
+        locationId: 'loc_papum_pare',
+        locationName: 'Papum Pare (NH-415 Corridor)',
+        region: 'Papum Pare, Arunachal Pradesh',
+        severity: SeverityLevel.critical,
+        title: 'CRITICAL LANDSLIDE ALERT',
+        message: 'Landslide risk elevated from 61 -> 86. Severe slope displacement detected near NH-415.',
+        cause: 'Heavy Rainfall (142mm), High Soil Moisture (88%), Verified Road Crack Report',
+        recommendedAction: 'Immediate Field Inspection & Divert Traffic to Route B',
+        createdAt: DateTime.now().subtract(const Duration(minutes: 18)),
+        status: AlertStatus.active,
+        deliveryChannels: const [
+          DeliveryChannel.push,
+          DeliveryChannel.sms,
+          DeliveryChannel.email,
+          DeliveryChannel.broadcastSiren,
+          DeliveryChannel.capIntegration,
+        ],
+        previousRiskScore: 61,
+        currentRiskScore: 86,
+      ),
+      AlertModel(
+        alertId: 'alt_002',
+        locationId: 'loc_tawang',
+        locationName: 'Tawang Pass Corridor',
+        region: 'Tawang, Arunachal Pradesh',
+        severity: SeverityLevel.high,
+        title: 'HIGH DEBRIS FLOW WARNING',
+        message: 'Alpine scree slope saturation reached threshold. Rockfall risk along BCT Road.',
+        cause: 'Continuous Rain (118mm) & Moraine Saturation',
+        recommendedAction: 'Deploy Highway Clearance Team & Issue Transport Advisory',
+        createdAt: DateTime.now().subtract(const Duration(hours: 1, minutes: 40)),
+        status: AlertStatus.active,
+        deliveryChannels: const [
+          DeliveryChannel.push,
+          DeliveryChannel.sms,
+          DeliveryChannel.capIntegration,
+        ],
+        previousRiskScore: 72,
+        currentRiskScore: 82,
+      ),
+      AlertModel(
+        alertId: 'alt_003',
+        locationId: 'loc_east_khasi',
+        locationName: 'Mawkdok Valley Gorge',
+        region: 'East Khasi Hills, Meghalaya',
+        severity: SeverityLevel.high,
+        title: 'CANYON ESCARPMENT WATCH',
+        message: 'Precipitation exceeded 160mm. Minor slumps recorded along scenic highway bypass.',
+        cause: 'Intense Cloudburst Event (168mm)',
+        recommendedAction: 'Monitor Automated Inclinometers & Restrict Heavy Vehicles',
+        createdAt: DateTime.now().subtract(const Duration(hours: 3)),
+        status: AlertStatus.active,
+        deliveryChannels: const [
+          DeliveryChannel.push,
+          DeliveryChannel.capIntegration,
+        ],
+        previousRiskScore: 65,
+        currentRiskScore: 78,
+      ),
+      AlertModel(
+        alertId: 'alt_004',
+        locationId: 'loc_dima_hasao',
+        locationName: 'Haflong Railway Cutting',
+        region: 'Dima Hasao, Assam',
+        severity: SeverityLevel.medium,
+        title: 'MODERATE MUD ACCUMULATION ADVISORY',
+        message: 'Clay-shale slopes draining slowly. Track patrol on standby.',
+        cause: 'Moderate Continuous Drizzle (98mm)',
+        recommendedAction: 'Routine Track Inspection',
+        createdAt: DateTime.now().subtract(const Duration(hours: 8)),
+        status: AlertStatus.resolved,
+        deliveryChannels: const [DeliveryChannel.push],
+        previousRiskScore: 58,
+        currentRiskScore: 52,
+      ),
+    ];
+  }
+}

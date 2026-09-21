@@ -1,0 +1,5 @@
+,Low Trigger,Moderate Trigger,High Trigger,Very High Trigger
+Low Susceptibility,LOW,LOW,MODERATE,HIGH
+Moderate Susceptibility,LOW,MODERATE,HIGH,HIGH
+High Susceptibility,MODERATE,HIGH,HIGH,VERY HIGH
+Very High Susceptibility,HIGH,HIGH,VERY HIGH,VERY HIGH
